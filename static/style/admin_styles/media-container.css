@@ -1,0 +1,40 @@
+.media-container{
+    display: grid;
+    margin: 0px auto;
+    gap: 10px; /* Расстояние между элементами */
+}
+.media-card{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #dedede;
+    aspect-ratio: 1 / 1;
+    height:100%;
+}
+.media-card:hover{
+    outline: 5px double lightblue;
+    cursor: pointer;
+}
+.media-add{
+    background-color: #a5c1fa;
+}
+.media-add img{
+    width:30%;
+}
+.media-card img{
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+/* Стили для больших экранов (3 колонки) */
+@media (min-width: 1600px) {
+    .media-container {
+        grid-template-columns: repeat(10, minmax(0, 1fr)); /* 3 колонки с одинаковой шириной */
+    }
+}
+
+@media (max-width: 1300px) {
+    .media-container {
+        grid-template-columns: repeat(6, minmax(0, 1fr)); /* 3 колонки с одинаковой шириной */
+    }
+}

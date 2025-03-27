@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Код красный - {{service[1]}}
+{% endblock %}
+
+{% block content %}
+
+<section class="service">
+    <div class="service-main-screen">
+        <div class="service-left-side">
+            <h1>{{service[1]}}</h1>
+            <p>{{service[3]}}</p>
+            <div class="service-button">
+
+                <a src="">Заказать расчет</a>
+            </div>
+
+        </div>
+        <div class="service-right-side">
+            <img src="{{url_for('static', filename=service[7])}}">
+        </div>
+    </div>
+
+    <div class="services-container">
+        {%for (id, title, service_type, description, price, dev_time, route, big_image, icon, published) in
+        service_recommendation %}
+        {% include "elements/service_recommendation.html" %}
+        {%endfor%}
+    </div>
+
+</section>
+
+
+{% endblock %}

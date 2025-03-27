@@ -1,0 +1,48 @@
+
+@import "fonts.css";
+@import "header.css";
+@import "footer.css";
+@import "service.css";
+
+@import "admin_styles/admin.css";
+@import "admin_styles/admin-base.css";
+@import "admin_styles/admin-left-sidebar.css";
+@import "admin_styles/admin_add_service.css";
+@import "admin_styles/media-container.css";
+
+:root {
+    --white-color: #f6f6f6;
+    --text-color: #2c2e3e;
+    --accent-color: #f80907;
+    --font-regular: "AvenirNextCyr-Regular", sans-serif;
+    --font-demi: "AvenirNextCyr-Demi", sans-serif;
+    --font-italic: "AvenirNextCyr-Italic", sans-serif;
+    --font-medium: "AvenirNextCyr-Medium", sans-serif;
+    --font-light: "AvenirNextCyr-Light", sans-serif;
+    --font-bold: "AvenirNextCyr-Bold", sans-serif;
+    --max-width: 1400px;
+}
+::selection {
+    background: #f80907aa;
+}
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+    display:flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+main{
+    margin-top:0px;
+}
+
+@media screen and (max-width: 980px) {
+    main{
+        margin-top:70px;
+    }
+}

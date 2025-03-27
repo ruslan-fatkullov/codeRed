@@ -1,0 +1,24 @@
+{% extends 'admin/admin_base.html' %}
+
+
+{% block title %}
+Медиа
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-container">
+    <div class="media-container">
+        <div class="media-card media-add">
+            <img src="{{url_for('static', filename=plus_icon)}}" alt="icon">
+        </div>
+        {%for image in media_files %}
+        <div class="media-card">
+            <img src="{{url_for('static', filename=image)}}" alt="icon">
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,256 @@
+header {
+    background-color: var(--white-color);
+    color: var(--text-color);
+    padding: 0 40px;
+
+    border-radius: 0 0 50px 50px ;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.25);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.25);
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+nav {
+    font-family: var(--font-regular);
+    max-width: 1920px;
+    margin: 0px auto;
+    padding: 10px 0;
+    align-items: baseline;
+    display: flex;
+    justify-content: space-around;
+    position:relative;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.nav-links li {
+}
+
+.nav-links .nav-link-a{
+    color: var(--text-color);
+    opacity: 0.9;
+    text-decoration: none;
+    font-family: var(--font-regular);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.nav-links .nav-link-a:hover {
+    outline: 1px solid var(--accent-color);
+    border-radius: 50px;
+}
+.nav-links .nav-link-a:active {
+    outline: 1px solid var(--accent-color);
+    border-radius: 50px;
+}
+
+/* мегаменю */
+.mega-wrap{
+    position:absolute;
+    padding-top:50px;
+    display:none;
+    z-index:99;
+    transform: translate(-120px, 0);
+}
+.mega-menu{
+    padding: 50px;
+    border-radius: 50px;
+    background-color: var(--white-color);
+    -webkit-box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+    box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+}
+.service-link:hover .mega-wrap{
+    display:block;
+}
+.mega-container{
+    display:flex;
+}
+.mega-column{
+    margin-right:20px;
+}
+.mega-section {
+    margin-bottom: 20px;
+}
+.mega-section h2{
+    margin-left: 30px;
+    font-family: var(--font-demi);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--text-color:);
+    margin-bottom: 20px;
+}
+.mega-section ul {
+    list-style-type: none;
+}
+.mega-section ul li{
+}
+.mega-section ul li a{
+    color: var(--text-color);
+    font-family: var(--font-regular);
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+}
+.mega-section ul li a:hover{
+    color: var(--accent-color);
+}
+/* бургер меню */
+.mobile-menu-container {
+    height: 50px;
+    display: flex;
+    align-items: baseline;
+    margin: 0 10px;
+    justify-content: space-between;
+}
+.mobile-menu-container .logo {
+    align-self: center;
+}
+.mobile-menu-container .logo img{
+    width: 50px;
+    height: 50px;
+}
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    position: fixed;
+    bottom: -100%; /* Меню скрыто внизу */
+    right: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* Высота меню: высота экрана минус высота шапки */
+    background-color: var(--white-color);
+    transition: bottom 0.3s ease;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    text-align: left;
+}
+
+.mobile-menu ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Стили для dropdown */
+.dropdown{
+    display:block;
+}
+.dropdown-menu {
+    width:100%;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--white-color);
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #444;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Анимация бургер-иконки */
+.burger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 5px);
+}
+
+.burger-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -5px);
+}
+
+/* Анимация меню */
+.mobile-menu.active {
+    bottom: 0px; /* Меню поднимается до шапки */
+}
+
+
+/*мобильная версия*/
+@media screen and (max-width: 980px) {
+    header {
+        background-color: var(--white-color);
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-radius: 0;
+    }
+    .desktop-menu{
+        display:none;
+    }
+    nav .desktop-menu{
+        display:none;
+    }
+}
+@media screen and (min-width: 980px) {
+
+    .mobile-menu-container {
+        display: none;
+    }
+}

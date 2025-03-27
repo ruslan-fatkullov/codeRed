@@ -1,0 +1,106 @@
+{% extends 'admin/admin_base.html' %}
+
+
+{% block title %}
+Добавление пользователя
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <!--    <h1 class="mt-5">Добавить услугу</h1>-->
+    <form method="POST" enctype="multipart/form-data">
+        <div class="admin-form">
+            <div class="admin-left-side">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.service_type.label(class="form-control-label") }}
+                    {{ form.service_type(class="form-control", rows=5) }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label(class="form-control-label") }}
+                    {{ form.description(class="form-control", rows=5) }}
+                </div>
+                <div class="form-group">
+                    {{ form.price.label(class="form-control-label") }}
+                    {{ form.price(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.development_time.label(class="form-control-label") }}
+                    {{ form.development_time(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.route.label(class="form-control-label") }}
+                    {{ form.route(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.published.label(class="form-control-label") }}
+                    {{ form.published(class="form-toggle") }}
+                </div>
+            </div>
+            <div class="admin-right-side">
+                <div class="admin-image-block">
+                    <div class="form-group">
+                        {{ form.image.label(class="form-control-label") }}
+                        {{ form.image(class="form-control-file") }}
+                        <img id="image-preview" class="form-image" src="{{url_for('static', filename=big_preview)}}" alt="Иконка">
+
+                    </div>
+
+
+                    <div class="form-group">
+                        {{ form.icon.label(class="form-control-label") }}
+                        {{ form.icon(class="form-control-file") }}
+                        <img id="icon-preview" class="form-icon" src="{{url_for('static', filename=icon_preview)}}"
+                             alt="Иконка">
+                    </div>
+
+
+                    <div class="form-group">
+                        {% for mesg in get_flashed_messages() %}
+                        <p>{{ mesg }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="admin-buttons">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                    <a class="btn btn-primary back_button"
+                       href="{{ url_for('admin_routes.get_all_services') }}">Отмена</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('serviceImageForm').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const preview = document.getElementById('image-preview');
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+            document.getElementById('serviceIconForm').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const preview = document.getElementById('icon-preview');
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    </form>
+</div>
+{% endblock %}

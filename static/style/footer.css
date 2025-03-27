@@ -1,0 +1,86 @@
+footer {
+    background-color: var(--white-color);
+    color: var(--text-color);
+    padding: 50px 0;
+
+    font-family: var(--font-regular);
+    -webkit-box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+    box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.25);
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+.footer-section a{
+    color: var(--text-color);
+}
+
+.footer-section a:hover{
+    color: var(--accent-color);
+}
+
+.footer-section h3 {
+    font-family: var(--font-demi);
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #2c2e3e33;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-color);
+}
+
+/*мобильная версия*/
+@media screen and (max-width: 980px) {
+    .footer-content {
+        flex-direction:column;
+    }
+}

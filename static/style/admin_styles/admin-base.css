@@ -1,0 +1,8 @@
+.admin-content{
+    display:flex;
+}
+.admin-content main{
+    flex-grow: 1;
+    margin-left: 300px;
+    margin-top: 20px;
+}

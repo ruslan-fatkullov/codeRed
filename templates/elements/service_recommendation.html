@@ -1,0 +1,14 @@
+<div class="service-item">
+    <div class="service-item-header">
+        <img src="{{url_for('static', filename=icon)}}" alt="icon">
+        <h2>{{ title }}</h2>
+        <a class="service-item-link" href="/services/{{route}}">Подробнее</a>
+    </div>
+    <div class="separator"></div>
+
+    <p>{{ description }}</p>
+    <div class="service-item-bottom">
+        <p><span class="highlight">{{ dev_time }}</span><br>срок разработки</p>
+        <p> <span class="highlight">{{ price }}</span><br>стоимость</p>
+    </div>
+</div>

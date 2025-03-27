@@ -1,0 +1,81 @@
+
+@import "elements/service_recommendation.css";
+
+.service{
+    max-width: var(--max-width);
+    margin: 50px auto;
+}
+.service-main-screen{
+    height: 90vh;
+    display:flex;
+    justify-content:space-around;
+    margin-top: -50px;
+}
+.service-left-side{
+    width: 60%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.service-left-side h1{
+    font-size: 60px;
+    text-align:left;
+    font-family: var(--font-bold);
+}
+.service-left-side p{
+    margin-top:30px;
+    font-size: 22px;
+    text-align:left;
+    font-family: var(--font-regular);
+}
+.service-left-side .service-button{
+    display:flex;
+    margin-top:30px;
+}
+.service-left-side .service-button a{
+    font-size: 22px;
+    background-color: var(--accent-color);
+    padding: 15px 55px ;
+    color: var(--white-color);
+    border-radius: 25px;
+}
+.service-left-side .service-button a:hover{
+    background-color: var(--text-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+.service-right-side{
+    display:flex;
+    justify-content:center;
+}
+.service-right-side img{
+    width: 60%;
+}
+.services-container {
+    display: grid;
+    max-width: var(--max-width);
+    margin: 0px auto;
+    gap: 50px; /* Расстояние между элементами */
+}
+
+
+/* Стили для больших экранов (3 колонки) */
+@media (min-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 3 колонки с одинаковой шириной */
+    }
+}
+
+/* Стили для средних экранов (2 колонки) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 колонки с одинаковой шириной */
+    }
+}
+
+/* Стили для мобильных устройств (1 колонка) */
+@media (max-width: 767px) {
+    .services-container {
+        grid-template-columns: minmax(0, 1fr); /* 1 колонка с одинаковой шириной */
+    }
+}

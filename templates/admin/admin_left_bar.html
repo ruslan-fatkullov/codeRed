@@ -1,0 +1,11 @@
+{% block content %}
+<div class="admin-left-bar-container">
+    <a class="admin-to-home" href="{{url_for('page_routes.home')}}">К сайту</a>
+    <h2>Админ панель</h2>
+    <div class="left-bar-list">
+
+        <a href="{{url_for('admin_routes.get_all_services')}}">Услуги</a>
+        <a href="{{url_for('admin_routes.media')}}">Медиа</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,140 @@
+{% block header %}
+<header>
+    <nav class="desktop-menu">
+        <div class="logo">
+            <a href="{{ url_for('page_routes.home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип сайта">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a class="nav-link-a" href="{{ url_for('page_routes.home') }}">Главная</a></li>
+            <li class="service-link"><a class="nav-link-a" href="#">Услуги</a>
+                <div class="mega-wrap">
+                    <div class="mega-menu">
+                        <div class="mega-container">
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h2>Web-разработка</h2>
+                                    <ul>
+                                        {%for (title, href) in web_services() %}
+                                        <li><a href="/services/{{href}}">{{ title }}</a></li>
+                                        {%endfor%}
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h2>Дизайн</h2>
+                                    <ul>
+                                        {%for (title, href) in design_services() %}
+                                        <li><a href="/services/{{href}}">{{ title }}</a></li>
+                                        {%endfor%}
+                                    </ul>
+                                </div>
+
+                                <div class="mega-section">
+                                    <h2>Продвижение</h2>
+                                    <ul>
+                                        {%for (title, href) in promotion_services() %}
+                                        <li><a href="/services/{{href}}">{{ title }}</a></li>
+                                        {%endfor%}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h2>Разработка ПО</h2>
+                                    <ul>
+                                        {%for (title, href) in development_services() %}
+                                        <li><a href="/services/{{href}}">{{ title }}</a></li>
+                                        {%endfor%}
+                                    </ul>
+                                </div>
+
+                                <div class="mega-section">
+                                    <h2>Сервисные услуги</h2>
+                                    <ul>
+                                        {%for (title, href) in services_items() %}
+                                        <li><a href="/services/{{href}}">{{ title }}</a></li>
+                                        {%endfor%}
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a class="nav-link-a" href="{{ url_for('page_routes.portfolio') }}">Портфолио</a></li>
+            <li><a class="nav-link-a" href="{{ url_for('page_routes.express_solutions') }}">Экспресс решения</a></li>
+            <li><a class="nav-link-a" href="{{ url_for('page_routes.about') }}">О нас</a></li>
+            <li><a class="nav-link-a" href="{{ url_for('page_routes.contacts') }}">Контакты</a></li>
+        </ul>
+
+    </nav>
+    <div class="mobile-menu-container">
+        <div class="logo">
+            <a href="{{ url_for('page_routes.home') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип сайта">
+            </a>
+        </div>
+        <div class="burger-icon" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu">
+    <ul>
+        <li><a href="{{ url_for('page_routes.home') }}">Главная</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle"></a>
+            <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
+
+                    <a href="#" class="dropdown-toggle">Веб-разработка</a>
+                    {%for i in web_services() %}
+                    <li><a href="#">{{i}}</a></li>
+                    {%endfor%}
+                </ul>
+                <ul class="dropdown-menu">
+
+                    <a href="#" class="dropdown-toggle">Дизайн</a>
+                    {%for i in design_services() %}
+                    <li><a href="#">{{i}}</a></li>
+                    {%endfor%}
+                </ul>
+                <ul class="dropdown-menu">
+                    <a href="#" class="dropdown-toggle">Продвижение</a>
+                    {%for i in promotion_services() %}
+                    <li><a href="#">{{i}}</a></li>
+                    {%endfor%}
+                </ul>
+                <ul class="dropdown-menu">
+                    <a href="#" class="dropdown-toggle">Разработка ПО</a>
+                    {%for i in development_services() %}
+                    <li><a href="#">{{i}}</a></li>
+                    {%endfor%}
+                </ul>
+                <ul class="dropdown-menu">
+                    <a href="#" class="dropdown-toggle">Сервисные услуги</a>
+                    {%for i in services_items() %}
+                    <li><a href="#">{{i}}</a></li>
+                    {%endfor%}
+                </ul>
+            </ul>
+        </li>
+        <li><a href="{{ url_for('page_routes.portfolio') }}">Портфолио</a></li>
+        <li><a href="{{ url_for('page_routes.express_solutions') }}">Экспресс решения</a></li>
+        <li><a href="{{ url_for('page_routes.about') }}">О нас</a></li>
+        <li><a href="{{ url_for('page_routes.contacts') }}">Контакты</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+
