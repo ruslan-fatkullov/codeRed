@@ -11,6 +11,7 @@ class Config:
     # Разрешенные расширения файлов
     ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'}
 
+
     # Настройки базы данных
     DATABASE = 'code_red.db'
     #     {
