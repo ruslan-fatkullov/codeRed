@@ -45,7 +45,7 @@
             <td>{{ published }}</td>
             <td>
                 <a href="{{url_for('admin_routes.edit_service', service_id=serv_id)}}" class="btn-edit">Редактировать</a>
-                <a href="{{url_for('admin_routes.delete_service', id=serv_id)}}" class="btn-delete">Удалить</a>
+                <a href="{{url_for('admin_routes.delete_service', service_id=serv_id)}}" class="btn-delete">Удалить</a>
             </td>
         </tr>
         {% endfor %}

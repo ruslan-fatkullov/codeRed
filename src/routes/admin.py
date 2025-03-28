@@ -24,7 +24,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'}
 
 
-@admin.route('/delete_service/<int:id>')
+@admin.route('/delete_service/<int:service_id>')
 def delete_service(service_id):
     delete_service_by_id(current_app.config.get('DATABASE'), service_id)
     return redirect(url_for('admin_routes.get_all_services'))
