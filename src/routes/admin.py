@@ -4,6 +4,7 @@ from datetime import datetime
 from flask import Blueprint, redirect, render_template, url_for, flash, request, current_app
 from werkzeug.utils import secure_filename
 
+
 from src.wtforms.create_service_form import ServiceForm
 from src.database.service import delete_service_by_id, get_all_service, create_service, get_service_by_id, \
     update_service
