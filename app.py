@@ -1,6 +1,6 @@
 from functools import wraps
 
-from flask import Flask, redirect, url_for, flash, session
+import flask
 from flask_wtf.csrf import CSRFProtect
 
 from src.database.db import init_db
